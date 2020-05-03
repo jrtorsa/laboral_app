@@ -1,0 +1,116 @@
+body {
+    background-color: #eaf4f4;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container1{
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 3rem;
+    margin-left: 12rem;
+    padding-top: 15px;
+    border: solid;
+    border-width: 1px;
+    border-color: grey;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+.container2{
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 3rem;
+    margin-left: 4rem;
+    padding-top: 15px;
+    border: solid;
+    border-width: 1px;
+    border-color: grey;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+.table{
+    display: table;
+    text-align: start;
+    margin-top: 1rem;
+    font-size: 15px;
+    font-weight: normal;
+    padding: 10px;
+    border-top: solid;
+    border-width: 1px;
+    white-space: normal;
+    line-height: normal;
+    border-color: grey;
+}
+.form-control1{
+    padding:  6px 12px;
+    border-radius: 4px;
+    width: 140px;
+    border: 1px solid #ccc;
+    margin-left: 30px;
+    margin-top: 8px;
+    text-align: right;
+}
+
+.form-control2{
+    padding:  6px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+    margin-top: 8px;
+    text-align: right;
+}
+
+.btn1{
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 20px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn2{
+    text-align: center;
+    width: 80px;
+    font-size: 14px;
+    margin-left: 30px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn3{
+    width: 80px;
+    font-size: 14px;
+    margin-right: 30px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-submit{
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="number"]{
+    padding: 8px;
+}
+
+input[type="number"]:focus{
+    outline: none;
+    background-color: blanchedalmond;
+}
+
+
+
+
+

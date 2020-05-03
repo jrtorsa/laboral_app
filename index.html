@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>App Laboral</title>
+</head>
+<body>
+    <div class="container1">
+        <strong>Calcula tu Liquidacion</strong>
+        <form id="payment-compensation-form">
+            <table class="table">
+            <tbody>
+                <tr>
+                    <td><label for="paycheck">Ingresa tu Sueldo</label></td>
+                    <td><input type="number" name="paycheck" class="form-control1" id="paycheck" step="0.01" pattern="^\d+(?:\.\d{1,2})?$" required/></td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;" colspan="3">
+                        <label for="weekly"><input type="radio" name="payment-period" value="7" id="weekly" required/> Semanal </label>
+                        <label for="two-weeks"><input type="radio" name="payment-period" value="15" id="two-weeks" required/> Quincenal </label>
+                        <label for="monthly"><input type="radio" name="payment-period" value="30" id="monthly" required/> Mensual </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Prestaciones</td>
+                    <td><input type="number" name="bonus" class="form-control1" id="bonus" min="0" max="100000"/></td>
+                </tr>
+                <tr>
+                    <td>Años laborando</td>
+                    <td><input type="number" name="year" class="form-control1" id="year" min="1" max="30"></td>
+                </tr>
+                <tr>
+                    <td>Meses laborando</td>
+                    <td><input type="number" name="month" class="form-control1" id="month" min="1" max="11"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit" class="btn-submit" id="calculate-button">Calcular</button>
+                    </td>
+                </tr>
+            </tbody>        
+            </table>
+        </form>
+    </div>
+    <div class="container2">
+        <strong>Resultados</strong>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>Salario Diario Integrado</td>
+                    <td><input id="daily-result" class="form-control2" disabled></td>
+                </tr>
+                <tr>
+                    <td><strong>Tiempo Laborado</strong></td>
+                    
+                </tr>
+                <tr>
+                    <td>Años</td>
+                    <td><input class="form-control2" disabled></td>
+                </tr>
+                <tr>
+                    <td>Meses</td>
+                    <td><input class="form-control2" disabled></td>
+                </tr>
+                <tr>
+                    <td>90 dias de salario</td>
+                    <td><input class="form-control2" disabled></td>
+                </tr>
+                <tr>
+                    <td>20 dias / año laborado</td>
+                    <td><input class="form-control2" disabled></td>
+                </tr>
+                <tr>
+                    <td>12 dias / año laborado</td>
+                    <td><input class="form-control2" disabled></td>
+                </tr>
+                <tr>
+                    <td>Liquidacion Total</td>
+                    <td><input class="form-control2" disabled></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
