@@ -1,27 +1,15 @@
 // Prevent keystroke 'e' for input numbers 
-const listner1 = function(event) {
-    console.log('primer listner')
+const inputs = document.querySelectorAll("input")
+inputs.addEventListener("keydown", function(event) {
     if (event.which === 69) {
-        event.preventDefault();
+      event.preventDefault();
     }
-}
-const inputNumbers = document.querySelectorAll("input[type='number']")
-inputNumbers.forEach(input => {
-    input.addEventListener("keydown", listner1)
-    input.addEventListener("keydown", function(event) {
-        console.log('segundo listner')
-        if (event.which === 70) {
-            input.removeEventListener('keydown', listner1);
-        }
-        
-    })
-    // input.addEventListener("input", function(event) {
-    //     console.log(input.value)
-    //     if (!/^\d+(?:\.\d{1,2})?$/.test(event.target.value)) {
-    //         event.preventDefault();
-    //     }
-    // })
 });
+//keystroke.addEventListener("keystroke", function(event) {
+  //  if (!/^\d+(?:\.\d{1,2})?$/.test(event.target.value)) {
+    //    event.preventDefault();
+   // } 
+//})
 
 //Values in table 1
 const paycheckElement = document.getElementById("paycheck");
@@ -33,15 +21,6 @@ const monthElement =  document.getElementById("month");
 
 //Result values in table 2
 const integratedDailySalaryElement = document.getElementById("daily-result")
-
-// paycheck.addEventListener("input", weeklyPayment);
-// bonus.addEventListener("input", calculate);
-// year.addEventListener("input", calculate);
-// month.addEventListener("input", calculate);
-
-// const weeklyPayment = () => {
-    
-// }
 
 const form = document.getElementById("payment-compensation-form")
 form.addEventListener("submit", calculateCompensation)
