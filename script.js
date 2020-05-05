@@ -1,10 +1,10 @@
 // Prevent keystroke 'e' for input numbers 
-const inputs = document.querySelectorAll("input")
-inputs.addEventListener("keydown", function(event) {
-    if (event.which === 69) {
-      event.preventDefault();
-    }
-});
+//const inputs = document.querySelectorAll("input")
+//inputs.addEventListener("keydown", function(event) {
+//    if (event.which === 69) {
+//      event.preventDefault();
+//    }
+//});
 //keystroke.addEventListener("keystroke", function(event) {
   //  if (!/^\d+(?:\.\d{1,2})?$/.test(event.target.value)) {
     //    event.preventDefault();
@@ -39,7 +39,38 @@ function calculateCompensation(e){
     console.log({salary, period, bonus, years, months})
     const dailySalary = salary / period;
     const yearlyBonus = dailySalary * 15 / 365
-    const integratedDailySalary = (dailySalary + yearlyBonus).toFixed(2);
+    const holydaysPerYearEquivalence = {
+        1: 6,
+        2: 8,
+        3: 10,
+        4: 12,
+        5: 14,
+        6: 14,
+        7: 14,
+        8: 14,
+        9: 14,
+        10: 16,
+        11: 16,
+        12: 16,
+        13: 16,
+        14: 16,
+        15: 18,
+        16: 18,
+        17: 18,
+        18: 18,
+        19: 18,
+        20: 20,
+        21: 20,
+        22: 20,
+        23: 20,
+        24: 20,
+        25: 22,
+        26: 22,
+        27: 22,
+        28: 22,
+        29: 22,
+    }
+    const holidayProportional = 
     integratedDailySalaryElement.value = integratedDailySalary
 }
 
