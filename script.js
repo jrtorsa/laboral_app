@@ -1,10 +1,10 @@
 // Prevent keystroke 'e' for input numbers 
-//const inputs = document.querySelectorAll("input")
-//inputs.addEventListener("keydown", function(event) {
-//    if (event.which === 69) {
-//      event.preventDefault();
-//    }
-//});
+const input = document.querySelectorAll("input")
+input.forEach(inp => inp.addEventListener("keydown", function(event) {
+    if (event.which === 69) {
+      event.preventDefault();
+    }
+}));
 //keystroke.addEventListener("keystroke", function(event) {
   //  if (!/^\d+(?:\.\d{1,2})?$/.test(event.target.value)) {
     //    event.preventDefault();
@@ -32,6 +32,7 @@ function calculateCompensation(e){
     const bonus = +bonusElement.value;
     const years = +yearElement.value;
     const months = +monthElement.value;
+    console.log(years, months)
     if(!years && !months){
         alert('Ingrese el tiempo laborado')
         return
@@ -70,7 +71,5 @@ function calculateCompensation(e){
         28: 22,
         29: 22,
     }
-    const holidayProportional = 
-    integratedDailySalaryElement.value = integratedDailySalary
 }
 
