@@ -1,8 +1,8 @@
 import React from "react";
-
+import Laboral from "./components/Laboral";
 class App extends React.Component {
   render() {
-    return <div>Hola</div>;
+    return <Laboral />;
   }
 }
 
