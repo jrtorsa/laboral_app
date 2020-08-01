@@ -36,6 +36,15 @@ form.addEventListener("submit", calculateCompensation);
 
 function calculateCompensation(e) {
   e.preventDefault();
+
+  fetch('http://127.0.0.1:3000/', {
+    method: 'POST',
+    body: JSON.stringify({
+      dato1: 'dato 1',
+      dato2: 'dato 2'
+    })
+  }).then(response => response.json()).then(json => console.log(json))
+
   const salary = +paycheckElement.value;
   const period = +document.querySelector('input[name="payment-period"]:checked')
     .value;
@@ -47,7 +56,13 @@ function calculateCompensation(e) {
     alert("Ingrese el tiempo laborado");
     return;
   }
-  console.log({ salary, period, bonus, years, months });
+  console.log({
+    salary,
+    period,
+    bonus,
+    years,
+    months
+  });
   const dailySalary = salary / period;
   const yearlyBonus = (dailySalary * 15) / 365;
 }
