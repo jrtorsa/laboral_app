@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Dates } from "./DatePicker";
+import Dates from "./DatePicker";
 import Styles from "./styles";
 
 class Laboral extends Component {
@@ -39,11 +39,12 @@ class Laboral extends Component {
             <input min="1" type="number" placeholder="Dias de Vacaciones" />
           </div>
           <div className="startDate">
-            <label htmlFor="startDate">Fecha Ingreso</label>
+            <label htmlFor="startDate">
+              Fechas de Ingreso
+              <br />
+              Fecha de Egreso
+            </label>
             <Dates />
-          </div>
-          <div className="endDate">
-            <label htmlFor="endDate">Fecha Egreso</label>
           </div>
         </div>
         <div className="button">
