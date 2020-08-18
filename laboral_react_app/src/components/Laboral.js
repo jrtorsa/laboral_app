@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import Dates from "./DatePicker";
+import Dates from "./WorkedTime";
 import Styles from "./styles";
 
 class Laboral extends Component {
   state = {
     salary: "",
+    bonus: 0,
   };
 
   handleChange = (event) => {
@@ -15,14 +16,19 @@ class Laboral extends Component {
     });
   };
   render() {
-    const { salary } = this.state;
+    const { salary, bonus } = this.state;
     const dailySalary = Math.floor(salary / 30);
+    const integratedSalary = dailySalary + parseInt(bonus);
 
     return (
       <Styles>
         <h1 className="title">Laboral App</h1>
         <div className="header">Calcula Tu Liquidacion</div>
         <div className="body">
+          <div className="salary">
+            <label htmlFor="name">Nombre</label>
+            <input name="name" type="text" placeholder="Nombre Completo" />
+          </div>
           <div className="salary">
             <label htmlFor="salary">Sueldo Mensual</label>
             <input
@@ -54,6 +60,19 @@ class Laboral extends Component {
             <div className="salary">
               <label>Salario Diario = </label>
               <input value={dailySalary} disabled />
+            </div>
+            <div className="salary">
+              <label>Bonos = </label>
+              <input
+                type="number"
+                name="bonus"
+                value={bonus}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="salary">
+              <label>Salario Integrado = </label>
+              <input value={integratedSalary} disabled />
             </div>
           </div>
         </div>
