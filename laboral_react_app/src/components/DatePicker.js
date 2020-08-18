@@ -26,9 +26,11 @@ class Dates extends Component {
     if (!moment.isMoment(startDate)) startDate = moment(startDate);
     if (!moment.isMoment(endDate)) endDate = moment(endDate);
 
-    const year = endDate.diff(startDate, "days") / 365;
-
-    return year;
+    const years = endDate.diff(startDate, "days") / 365;
+    const year = Math.floor(years);
+    const months = Math.abs(years) - year / 12;
+    const month = Math.ceil(months);
+    return `${year} años ${month} meses`;
   }
   render() {
     const { startDate, endDate } = this.state;
