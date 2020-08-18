@@ -1,38 +1,53 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import DatePicker from "react-datepicker";
-import moment from 'react-moment'
+import moment from 'moment'
 import "react-datepicker/dist/react-datepicker.css";
 //import es from "date-fns/locale/es";
 
-const Dates = () => {
-  const today = moment()
-  console.log(today.format('YYYY-MM-DD'))
-  const [startDate, SetStartDate] = useState(new Date("2000/01/01"));
-  const [endDate, setEndDate] = useState(new Date());
+class Dates extends Component{
 
-  console.log(startDate);
+  state ={
+    startDate: new Date('2010/09/22'),
+    endDate: new Date()
+  }
 
+  handleChangeStart(date) {
+    this.setState({
+      startDate: date
+    });
+  }
+
+  handleChangeEnd(date) {
+    this.setState({
+      endDate: date
+    });
+  }
+
+ calculateDaysLeft(startDate, endDate){
+    if (!moment.isMoment(startDate)) startDate = moment(startDate);
+    if (!moment.isMoment(endDate)) endDate = moment(endDate);
+
+    return endDate.diff(startDate, "days") / 365;
+  }
+render(){
+  const { startDate, endDate } = this.state;
+  const daysLeft = this.calculateDaysLeft(startDate, endDate);
   return (
-    <>
-      <DatePicker
-        startDate={startDate}
-        selected={startDate}
-        onSelect={(date) => SetStartDate(date)}
-        selectsStart
-        endDate={endDate}
-        minDate={startDate}
-        showYearDropdown
-      />
-      <DatePicker
-        endDate={endDate}
-        onSelect={(date) => setEndDate(date)}
-        selected={endDate}
-        selectsEnd
-        startDate={startDate}
-        showYearDropdown
-      />
-    </>
-  );
-};
+    <div>
+        <DatePicker
+          selected={this.state.startDate}
+          onChange={this.handleChangeStart}
+        />
+        &nbsp;&nbsp;&nbsp;
+        <DatePicker
+          selected={this.state.endDate}
+          onChange={this.handleChangeEnd}
+        />
+        <div className="amount">{daysLeft}</div>
+    </div>
+  )
+}
+}
 
-export default Dates;
+export default Dates
+
