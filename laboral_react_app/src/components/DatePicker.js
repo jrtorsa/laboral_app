@@ -1,39 +1,40 @@
 import React, { Component } from "react";
 import DatePicker from "react-datepicker";
-import moment from 'moment'
+import moment from "moment";
 import "react-datepicker/dist/react-datepicker.css";
 //import es from "date-fns/locale/es";
 
-class Dates extends Component{
-
-  state ={
+class Dates extends Component {
+  state = {
     startDate: new Date(),
-    endDate: new Date()
-  }
+    endDate: new Date(),
+  };
 
   handleChangeStart = (date) => {
     this.setState({
-      startDate: date
+      startDate: date,
     });
-  }
+  };
 
   handleChangeEnd = (date) => {
     this.setState({
-      endDate: date
+      endDate: date,
     });
-  }
+  };
 
- calculateDaysLeft(startDate, endDate){
+  calculateDaysLeft(startDate, endDate) {
     if (!moment.isMoment(startDate)) startDate = moment(startDate);
     if (!moment.isMoment(endDate)) endDate = moment(endDate);
 
-    return endDate.diff(startDate, "days") / 365;
+    const year = endDate.diff(startDate, "days") / 365;
+
+    return year;
   }
-render(){
-  const { startDate, endDate } = this.state;
-  const daysLeft = this.calculateDaysLeft(startDate, endDate);
-  return (
-    <div>
+  render() {
+    const { startDate, endDate } = this.state;
+    const daysLeft = this.calculateDaysLeft(startDate, endDate);
+    return (
+      <div>
         <DatePicker
           showYearDropdown
           selected={this.state.startDate}
@@ -45,11 +46,10 @@ render(){
           selected={this.state.endDate}
           onChange={this.handleChangeEnd}
         />
-        <div className="amount">{daysLeft}</div>
-    </div>
-  )
-}
+        <input disabled className="amount" value={daysLeft} />
+      </div>
+    );
+  }
 }
 
-export default Dates
-
+export default Dates;

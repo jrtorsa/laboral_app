@@ -43,22 +43,16 @@ class Laboral extends Component {
               Fechas de Ingreso
               <br />
               Fecha de Egreso
+              <br />
+              Tiempo Laborado =
             </label>
             <Dates />
           </div>
         </div>
-        <div className="button">
-          <button>Calcular</button>
-        </div>
         <div className="right-panel">
-          <div className="header">Resultados</div>
           <div className="body">
             <div className="salary">
               <label>Salario Diario = </label>
-              <input value={dailySalary} disabled />
-            </div>
-            <div className="startDate">
-              <label>Tiempo Laborado = </label>
               <input value={dailySalary} disabled />
             </div>
           </div>
