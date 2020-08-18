@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Dates from "./WorkedTime";
+import YearlyPayment from "./YearlyPayment";
 import Styles from "./styles";
 
 class Laboral extends Component {
@@ -69,6 +70,10 @@ class Laboral extends Component {
             <div className="salary">
               <label>Salario Integrado = </label>
               <input value={integratedSalary} disabled />
+            </div>
+            <div className="salary">
+              <label>Aguinaldo</label>
+              <YearlyPayment />
             </div>
           </div>
         </div>
