@@ -7,17 +7,17 @@ import "react-datepicker/dist/react-datepicker.css";
 class Dates extends Component{
 
   state ={
-    startDate: new Date('2010/09/22'),
+    startDate: new Date(),
     endDate: new Date()
   }
 
-  handleChangeStart(date) {
+  handleChangeStart = (date) => {
     this.setState({
       startDate: date
     });
   }
 
-  handleChangeEnd(date) {
+  handleChangeEnd = (date) => {
     this.setState({
       endDate: date
     });
