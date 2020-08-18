@@ -40,10 +40,6 @@ class Laboral extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div className="vacations">
-            <label htmlFor="vacations">Vacaciones</label>
-            <input min="1" type="number" placeholder="Dias de Vacaciones" />
-          </div>
           <div className="startDate">
             <label htmlFor="startDate">
               Fechas de Ingreso
