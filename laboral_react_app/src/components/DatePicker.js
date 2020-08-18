@@ -35,11 +35,13 @@ render(){
   return (
     <div>
         <DatePicker
+          showYearDropdown
           selected={this.state.startDate}
           onChange={this.handleChangeStart}
         />
         &nbsp;&nbsp;&nbsp;
         <DatePicker
+          showYearDropdown
           selected={this.state.endDate}
           onChange={this.handleChangeEnd}
         />
