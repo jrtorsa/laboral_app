@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
+import moment from 'react-moment'
 import "react-datepicker/dist/react-datepicker.css";
 //import es from "date-fns/locale/es";
 
 const Dates = () => {
+  const today = moment()
+  console.log(today.format('YYYY-MM-DD'))
   const [startDate, SetStartDate] = useState(new Date("2000/01/01"));
   const [endDate, setEndDate] = useState(new Date());
 
